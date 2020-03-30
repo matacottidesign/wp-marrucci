@@ -45,6 +45,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php wp_footer(); ?>
 
+<!--Navbar Animation-->
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+    var currentScrollpos = window.pageYOffset;
+
+      if (prevScrollpos > currentScrollpos) {
+        //document.getElementsByTagName("nav")[0].style.backgroundColor = 'red';
+      } 
+      else {
+        document.getElementsByTagName("nav")[0].style.backgroundColor = '#343a40';
+      }
+
+      if(currentScrollpos === 0){
+        document.getElementsByTagName("nav")[0].style.backgroundColor = 'rgba(255,255,255,0)';
+      }
+
+      prevScrollpos = currentScrollpos;
+    };
+</script>
+
 </body>
 
 </html>

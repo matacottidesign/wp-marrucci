@@ -1,7 +1,147 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 body{
-	font-size: 18px;
-	color: #b3deff;
+	font-family: 'Spartan', sans-serif;
+	font-weight: 300;
+	color: $dark;
+	background-color: $gray-100;
+	height: 100vh;
 	margin: 0px;
 	padding: 0px;
+}
+
+.py-6 {
+    padding: 4rem 0;
+
+}
+.py-7 {
+    padding: 5.5rem 0;
+}
+.py-8 {
+    padding: 6rem 0;
+}
+
+.pt-6 {
+    padding-top: 4rem;
+}
+.pt-7 {
+    padding-top: 5.5rem;
+}
+.pt-8 {
+    padding-top: 6rem;
+}
+
+.pb-6 {
+    padding-bottom: 4rem;
+}
+.pb-7 {
+    padding-bottom: 5.5rem;  
+}
+.pb-8 {
+    padding-bottom: 6rem;
+}
+
+a{
+	color: $primary;
+	transition: 0.5s;
+}
+a:hover{
+	color: $primary;
+}
+
+.btn{
+	border-radius: 0 !important;
+	border: inherit !important;
+
+	a{
+		color: $white !important;
+		text-decoration: none;
+	}
+}
+.btn:hover{
+	background-color: $dark;
+}
+
+.main-btn{
+    animation: beat 1s infinite alternate;
+	transform-origin: center;
+}
+@keyframes beat{
+	to { transform: scale(1.1); }
+}
+
+h1{
+	font-weight: 800;
+}
+h2{
+	font-weight: 800;
+}
+h3{
+	font-weight: 800;
+}
+h4{
+	font-weight: 800;
+}
+h5{
+	font-weight: 800;
+}
+h6{
+	font-weight: 800;
+}
+
+
+//Navbar
+.navbar{
+	padding: 0;
+	transition: 0.5s;
+}
+
+.navbar-brand{
+	color: $white;
+	font-weight: 800;
+}
+
+.nav-item{
+    transition: 0.5s;
+	padding: 0;
+	font-weight: 500;
+    //border-radius: 0.25rem; 
+
+    a{
+        color: $white; 
+        transition: 0.5s;
+    }
+}
+.nav-item:hover{
+    background-color: $primary;
+
+    a{
+        color: $dark !important;
+    }
+}
+#menu-item-11{
+    &.active{
+		//background-color: $primary;
+		color: $white !important;
+		border-bottom: 3px solid $primary;
+	}
+}
+
+
+
+//Cards
+.card{
+	height: 175px;
+	background-color: $gray-100;
+	border-radius: 0;
+	border-top: inherit;
+	border-left: inherit;
+	border-right: inherit;
+	border-bottom: 5px solid $primary;
+	transition: 0.5s;
+}
+.card:hover{
+	box-shadow: 0px 0px 20px #ddd;
+	background-color: $primary;
+	color: $white;
+	transform:scale(0.95,0.95);
 }
