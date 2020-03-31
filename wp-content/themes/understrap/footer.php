@@ -15,27 +15,36 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper bg-primary" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
-		<div class="row">
+  <footer class="container">
+    <div class="row py-3">
 
-			<div class="col-md-12">
+      <div class="col-12 col-sm-4 footer-col text-center">
+        <h6 class="pb-3">CONTATTI</h6>
+        <ul class="pl-0">
+          <li style="font-size: 30px;" class="list-inline-item mr-5"><a href="#"><i class="fas fa-phone-alt"></i></a></li>
+          <li style="font-size: 30px;" class="list-inline-item"><a href="#"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+      </div>
 
-				<footer class="site-footer" id="colophon">
+      <div class="col-12 col-sm-4 footer-col text-center">
+        <h6 class="pb-3">SOCIAL</h6>
+        <ul class="list-inline pl-0">
+          <li style="font-size: 30px;" class="list-inline-item mr-5"><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li style="font-size: 30px;" class="list-inline-item mr-5"><a href="#"><i class="fab fa-behance"></i></a></li>
+          <li style="font-size: 30px;" class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+        </ul>
+      </div>
 
-					<div class="site-info">
+      <div class="col-12 col-sm-4 text-center">
+      <p>Made with <i class="fab fa-wordpress"></i> and <i class="fas fa-heart"></i> by <a class="matacotti" href="https://matacottidesign.it" target="_blank">Matacotti Design</a></p>
+      </div>
 
-						<?php understrap_site_info(); ?>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
+    </div>
+  </footer>
 
 	</div><!-- container end -->
 

@@ -20,6 +20,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 
+	<!-- Font Awesome Icons -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<!--Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Spartan:300,500,700&display=swap" rel="stylesheet"> 
 </head>
 

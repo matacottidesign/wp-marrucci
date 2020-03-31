@@ -86,7 +86,6 @@ get_header();
     <?php  } ?>
 
 
-
     <!--Servizi offerti-->
     <div class="py-8">
         <div class="container">
@@ -104,7 +103,7 @@ get_header();
                         ?>
 
                         <div class="col-12 col-lg-3">
-                            <div class="card px-3 pt-3 pb-0 text-center">
+                            <div class="card-servizi px-3 pt-3 pb-0 text-center">
                                 <div class="d-flex justify-content-center">
                                     <img class="mb-4" width="50px" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
                                 </div>
@@ -116,7 +115,7 @@ get_header();
                 <?php endif; ?>
             </div>
             <div class="d-flex justify-content-center">
-                <button class="mt-5 main-btn btn btn-primary">
+                <button class="mt-5 main-btn btn btn-warning">
                     <?php 
                     $link = get_field('link_contatti');
                     if( $link ): 
@@ -127,6 +126,79 @@ get_header();
                         <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                     <?php endif; ?>
                 </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Progetti-->
+    <div class="bg-white py-8">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-12 col-sm-6 d-flex align-items-center">
+                    <div class="box-brd-left my-5 p-3">
+                    <h2><?php the_field('titolo_generale_progetti') ?></h2>
+                    <?php the_field('descrizione_generale_progetti') ?>
+                    <button class="mt-3 btn btn-primary">
+                        <?php 
+                        $link_generale_progetti = get_field('link_generale_progetti');
+                        if( $link_generale_progetti ): 
+                            $link_generale_progetti_url = $link_generale_progetti['url'];
+                            $link_generale_progetti_title = $link_generale_progetti['title'];
+                            $link_generale_progetti_target = $link_generale_progetti['target'] ? $link_generale_progetti['target'] : '_self';
+                            ?>
+                            <a href="<?php echo esc_url( $link_generale_progetti_url ); ?>" target="<?php echo esc_attr( $link_generale_progetti_target ); ?>"><?php echo esc_html( $link_generale_progetti_title ); ?></a>
+                        <?php endif; ?>
+                    </button>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <?php if( have_rows('card_progetti') ): ?>
+                    <div class="galleria">
+
+                        <?php while( have_rows('card_progetti') ): the_row(); 
+
+                            // vars
+                            $image = get_sub_field('immagine_card_progetti');
+                            $title = get_sub_field('titolo_card_progetti');
+                            $content = get_sub_field('descrizione_card_progetti');
+                            $link = get_sub_field('link_card_progetti');
+
+                            ?>
+
+                            <div>
+                                <div class="card-progetti mb-5 row no-gutters">
+                                    <div class="col-lg-6">
+                                        <img class="card-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $title; ?></h5>
+                                            <p class="card-text"><?php echo $content; ?></p>
+                                            <button class="mt-3 btn btn-primary">
+                                                <?php 
+                                                $link = get_sub_field('link_card_progetti');
+                                                if( $link ): 
+                                                    $link_url = $link['url'];
+                                                    $link_title = $link['title'];
+                                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                                    ?>
+                                                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                                                <?php endif; ?>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <?php endwhile; ?>
+                    </div>
+                    <?php endif; ?>         
+                    
+                </div>
+
             </div>
         </div>
     </div>
