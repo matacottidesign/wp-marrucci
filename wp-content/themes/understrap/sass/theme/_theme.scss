@@ -169,16 +169,18 @@ h6{
 .box-brd-left{
 	border-left: 5px solid $primary;
 	transition: 0.5s;
+
+	button{
+		border-left: 0 !important;
+		transition: 0.5s;
+	}
 }
 .box-brd-left:hover{
-	background-color: $primary;
-	color: $white;
 	-ms-transform: translate(10px,0px); /* IE 9 */
 	transform: translate(10px,0px); /* Standard syntax */
 
 	button{
 		background-color: $warning;
-		transition: 0.5s;
 	}
 	button:hover{
 		background-color: $dark;
@@ -187,7 +189,7 @@ h6{
 
 .galleria{
 	overflow: scroll !important;
-	height: 500px;
+	height: 750px;
 }
 .card-progetti{
 	background-color: $secondary;

@@ -136,22 +136,27 @@ get_header();
         <div class="container">
             <div class="row">
                 
-                <div class="col-12 col-sm-6 d-flex align-items-center">
-                    <div class="box-brd-left my-5 p-3">
-                    <h2><?php the_field('titolo_generale_progetti') ?></h2>
-                    <?php the_field('descrizione_generale_progetti') ?>
-                    <button class="mt-3 btn btn-primary">
-                        <?php 
-                        $link_generale_progetti = get_field('link_generale_progetti');
-                        if( $link_generale_progetti ): 
-                            $link_generale_progetti_url = $link_generale_progetti['url'];
-                            $link_generale_progetti_title = $link_generale_progetti['title'];
-                            $link_generale_progetti_target = $link_generale_progetti['target'] ? $link_generale_progetti['target'] : '_self';
-                            ?>
-                            <a href="<?php echo esc_url( $link_generale_progetti_url ); ?>" target="<?php echo esc_attr( $link_generale_progetti_target ); ?>"><?php echo esc_html( $link_generale_progetti_title ); ?></a>
-                        <?php endif; ?>
-                    </button>
+                <div class="col-12 col-sm-6">
+                    <div class="box-brd-left mb-5 p-3">
+                        <h2><?php the_field('titolo_generale_progetti') ?></h2>
+                        <?php the_field('descrizione_generale_progetti') ?>
+                        <button class="mt-3 btn btn-primary">
+                            <?php 
+                            $link_generale_progetti = get_field('link_generale_progetti');
+                            if( $link_generale_progetti ): 
+                                $link_generale_progetti_url = $link_generale_progetti['url'];
+                                $link_generale_progetti_title = $link_generale_progetti['title'];
+                                $link_generale_progetti_target = $link_generale_progetti['target'] ? $link_generale_progetti['target'] : '_self';
+                                ?>
+                                <a href="<?php echo esc_url( $link_generale_progetti_url ); ?>" target="<?php echo esc_attr( $link_generale_progetti_target ); ?>"><?php echo esc_html( $link_generale_progetti_title ); ?></a>
+                            <?php endif; ?>
+                        </button>
                     </div>
+                    <?php 
+                    $image = get_field('immagine_progetti');
+                    if( !empty( $image ) ): ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
                 </div>
 
                 <div class="col-12 col-sm-6">
