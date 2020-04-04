@@ -40,6 +40,10 @@ body{
     padding-bottom: 6rem;
 }
 
+ul{
+	list-style: none !important;
+}
+
 a{
 	color: $primary;
 	transition: 0.5s;
@@ -65,11 +69,6 @@ a:hover{
     animation: jump 0.8s infinite alternate;
 	transform-origin: center;
 }
-/* @keyframes beat{
-	to { 
-		transform: scale(1.1); 
-	}
-} */
 @keyframes jump{
 	to { 
 		-ms-transform: translate(0,10px); /* IE 9 */
@@ -94,12 +93,6 @@ h5{
 }
 h6{
 	font-weight: 800;
-}
-
-.v-bar{
-	height: 200px;
-	width: 5px;
-	background-color: $primary;
 }
 
 
@@ -132,13 +125,11 @@ h6{
         color: $dark !important;
     }
 }
-#menu-item-11{
-    &.active{
+.active{
 		//background-color: $primary;
 		color: $white !important;
 		border-bottom: 3px solid $primary;
 	}
-}
 
 
 
@@ -264,6 +255,12 @@ h6{
 	transform: scale(0.9);
 }
 
+
+//Biografia
+.hero{
+	height: 400px;
+
+}
 
 
 
