@@ -213,8 +213,49 @@ get_header();
     <div class="container">
         <div class="row py-8">
 
-            <div class="col-12 col-sm-6">
-            cards
+        <div class="col-12 col-sm-6">
+            <?php if( have_rows('card_commissioni') ): ?>
+                <div class="galleria">
+
+                    <?php while( have_rows('card_commissioni') ): the_row(); 
+
+                        // vars
+                        $imageCommissioni = get_sub_field('immagine_card_commissioni');
+                        $titleCommissioni = get_sub_field('titolo_card_commissioni');
+                        $contentCommissioni = get_sub_field('descrizioni_card_commissioni');
+                        $linkCommissioni = get_sub_field('link_card_commissioni');
+
+                        ?>
+
+                        
+                            <div class="card-progetti mb-5 row no-gutters">
+                                <div class="col-lg-6">
+                                    <img class="card-img" src="<?php echo $imageCommissioni['url']; ?>" alt="<?php echo $imageCommissioni['alt'] ?>" />
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $titleCommissioni; ?></h5>
+                                        <p class="card-text"><?php echo $contentCommissioni; ?></p>
+                                        <button class="mt-3 btn btn-primary">
+                                            <?php 
+                                            $linkCommissioni = get_sub_field('link_card_commissioni');
+                                            if( $linkCommissioni ): 
+                                                $linkCommissioni_url = $linkCommissioni['url'];
+                                                $linkCommissioni_title = $linkCommissioni['title'];
+                                                $linkCommissioni_target = $linkCommissioni['target'] ? $linkCommissioni['target'] : '_self';
+                                                ?>
+                                                <a href="<?php echo esc_url( $linkCommissioni_url ); ?>" target="<?php echo esc_attr( $linkCommissioni_target ); ?>"><?php echo esc_html( $linkCommissioni_title ); ?></a>
+                                            <?php endif; ?>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>         
+                
             </div>
 
             <div class="col-12 col-sm-6">
@@ -240,6 +281,44 @@ get_header();
                 if( !empty( $image ) ): ?>
                     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Card Recensioni-->
+    <div class="bg-white py-8">
+        <div class="gallery">
+            <div class="thumbnails">
+
+                <?php if( have_rows('card_recensioni') ): ?>
+                    <?php while( have_rows('card_recensioni') ): the_row(); 
+
+                        // vars
+                        $image = get_sub_field('immagine_profilo');
+                        $title = get_sub_field('nome_profilo');
+                        $content = get_sub_field('recensione_profilo');
+                        $vote = get_sub_field('voto_profilo');
+
+                        ?>
+
+                        <div class="card-recensioni text-white bg-primary mr-5">
+                            <div class="d-flex">
+                                <?php 
+                                if( !empty( $image ) ): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?>
+                                <div class="p-3 content-box">
+                                    <h5 class="card-title"><?php echo $title; ?></h5>
+                                    <p class="card-text"><?php echo $content; ?></p>
+                                    <?php echo "<div style='color: #ffc107;' class='text-right'>" . $vote . "</div>"; ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>

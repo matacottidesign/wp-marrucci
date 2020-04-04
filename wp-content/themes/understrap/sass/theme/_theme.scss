@@ -212,6 +212,41 @@ h6{
 	overflow: scroll !important;
 	height: 750px;
 }
+
+.gallery{
+	//border: 1px solid black;
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+	overflow-x: scroll;
+}
+.thumbnails {
+	display: inline-flex;
+    width: auto;
+}
+.card-recensioni{
+	width: 600px;
+	height: 100vh;
+	transition: 0.5s;
+
+	div{
+
+		img{
+			width: 300px;
+			height: 300px;
+		}
+
+		.content-box{
+			overflow: scroll;
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+.card-recensioni:hover{
+	background-color: #343a40 !important;
+}
+
 .card-progetti{
 	background-color: $secondary;
 	transition: 0.5s;
