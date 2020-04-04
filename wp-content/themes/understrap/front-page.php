@@ -209,6 +209,42 @@ get_header();
     </div>
 
 
+    <!--Commissioni-->
+    <div class="container">
+        <div class="row py-8">
+
+            <div class="col-12 col-sm-6">
+            cards
+            </div>
+
+            <div class="col-12 col-sm-6">
+                <div class="box-brd-right mb-5 p-3 text-right">
+                    <h2><?php the_field('titolo_generale_commissioni'); ?></h2>
+                    <?php the_field('descrizione_generale_commissioni'); ?>
+
+                    <button class="mt-3 btn btn-primary">
+                    <?php 
+                    $link = get_field('link_generale_commissioni');
+                    if( $link ): 
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                        <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                    <?php endif; ?>
+                    </button>
+                </div>    
+
+                <?php 
+                $image = get_field('immagine_commissioni');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
