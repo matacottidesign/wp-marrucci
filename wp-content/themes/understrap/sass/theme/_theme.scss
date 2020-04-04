@@ -125,11 +125,13 @@ h6{
         color: $dark !important;
     }
 }
-.active{
+nav{
+	.active{
 		//background-color: $primary;
 		color: $white !important;
 		border-bottom: 3px solid $primary;
 	}
+}
 
 
 
@@ -256,10 +258,20 @@ h6{
 }
 
 
-//Biografia
-.hero{
+//Hero-img
+.hero-bio{
 	height: 400px;
-
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-bio.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.hero-blog{
+	height: 400px;
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-blog.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 

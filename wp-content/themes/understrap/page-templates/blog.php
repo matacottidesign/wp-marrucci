@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Biografia
+ * Template Name: Blog
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
@@ -21,16 +21,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="hero-bio bg-warning"></div>
+<div class="hero-blog bg-warning">
+    <?php 
+    $image = get_field('immagine_principale_blog');
+    if( !empty( $image ) ): ?>
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
+</div>
 
 <!--Storia-->
 <div class="py-8">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-6">
                 <?php the_field('descrizione_storia'); ?>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-6">
                 <?php 
                 $image = get_field('immagine_storia');
                 if( !empty( $image ) ): ?>
@@ -65,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="py-8">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-6">
                 <div class="mb-3">
                 <h2 class="mb-5"><?php the_field('titolo_cv'); ?></h2>
                 <?php the_field('descrizione_cv'); ?>
@@ -79,7 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </button>
                 <?php endif; ?>
             </div>
-            <div class="col-12 col-md-6 d-flex justify-content-between">
+            <div class="col-12 col-sm-6 d-flex justify-content-between">
                 <?php if( have_rows('icone_softwares') ): ?>
                     <?php while( have_rows('icone_softwares') ): the_row(); 
 

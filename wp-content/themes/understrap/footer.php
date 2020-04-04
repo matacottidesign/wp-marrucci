@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
   <footer class="container">
     <div class="row py-3">
 
-      <div class="col-12 col-sm-4 footer-col text-center">
+      <div class="col-12 col-md-4 footer-col text-center">
         <h6 class="pb-3">CONTATTI</h6>
         <ul class="pl-0">
           <li style="font-size: 30px;" class="list-inline-item mr-5"><a href="#"><i class="fas fa-phone-alt"></i></a></li>
@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         </ul>
       </div>
 
-      <div class="col-12 col-sm-4 footer-col text-center">
+      <div class="col-12 col-md-4 footer-col text-center">
         <h6 class="pb-3">SOCIAL</h6>
         <ul class="list-inline pl-0">
           <li style="font-size: 30px;" class="list-inline-item mr-5"><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         </ul>
       </div>
 
-      <div class="col-12 col-sm-4 text-center">
+      <div class="col-12 col-md-4 text-center">
       <p>Made with <i class="fab fa-wordpress"></i> and <i class="fas fa-heart"></i> by <a class="matacotti" href="https://matacottidesign.it" target="_blank">Matacotti Design</a></p>
       </div>
 
