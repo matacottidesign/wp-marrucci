@@ -21,87 +21,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="hero-blog bg-warning">
-    <?php 
-    $image = get_field('immagine_principale_blog');
-    if( !empty( $image ) ): ?>
-        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-    <?php endif; ?>
-</div>
+<div class="hero-blog bg-warning"></div>
 
-<!--Storia-->
+<!--Cards-->
 <div class="py-8">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-6">
-                <?php the_field('descrizione_storia'); ?>
-            </div>
-            <div class="col-12 col-sm-6">
-                <?php 
-                $image = get_field('immagine_storia');
-                if( !empty( $image ) ): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--Skills-->
-<div class="py-8 bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <?php 
-                $image = get_field('immagine_skills');
-                if( !empty( $image ) ): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php endif; ?>
-            </div>
-            <div class="col-12 col-sm-6 text-right">
-                <h2 class="mb-5"><?php the_field('titolo_skills'); ?></h2>
-                <?php the_field('descrizione_skills'); ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--ICONE + CV-->
-<div class="py-8">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <div class="mb-3">
-                <h2 class="mb-5"><?php the_field('titolo_cv'); ?></h2>
-                <?php the_field('descrizione_cv'); ?>
-                </div>
-
-                <?php
-                $file = get_field('file_download');
-                if( $file ): ?>
-                    <button class="btn btn-primary">
-                        <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
-                    </button>
-                <?php endif; ?>
-            </div>
-            <div class="col-12 col-sm-6 d-flex justify-content-between">
-                <?php if( have_rows('icone_softwares') ): ?>
-                    <?php while( have_rows('icone_softwares') ): the_row(); 
+            <?php if( have_rows('ripetitore') ): ?>
+                    <?php while( have_rows('ripetitore') ): the_row(); 
 
                         // vars
-                        $image = get_sub_field('immagine_icona');
+                        $image = get_sub_field('immagine_ripetitore');
 
                         ?>
-                        <img width="40px" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                        <div class="col-12 col-md-4">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    <div class="flip-box-front">
+                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                                        <div class="card-body">
+                                            <h6><?php the_sub_field('titolo_ripetitore'); ?></h6>
+                                            <?php the_sub_field('descrizione_ripetitore'); ?>
+                                        </div>
+                                    </div>
+                                    <div class="flip-box-back">
+                                        <h2>Back Side</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
-</div>
+</div> 
 
 
 
