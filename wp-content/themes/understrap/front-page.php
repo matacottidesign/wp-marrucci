@@ -288,9 +288,11 @@ get_header();
 
     <!--Card Recensioni-->
     <div class="bg-white py-8">
+
+        <h2 class="text-center mb-5"><?php the_field('titolo_recensione'); ?></h2>
+
         <div class="gallery">
             <div class="thumbnails">
-
                 <?php if( have_rows('card_recensioni') ): ?>
                     <?php while( have_rows('card_recensioni') ): the_row(); 
 
@@ -318,9 +320,23 @@ get_header();
 
                     <?php endwhile; ?>
                 <?php endif; ?>
-
             </div>
         </div>
+
+        <div class="text-center">
+        <button class="mt-3 btn btn-warning">
+            <?php 
+            $linkRecensione = get_field('link_recensione');
+            if( $linkRecensione ): 
+                $linkRecensione_url = $linkRecensione['url'];
+                $linkRecensione_title = $linkRecensione['title'];
+                $linkRecensione_target = $linkRecensione['target'] ? $linkRecensione['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $linkRecensione_url ); ?>" target="<?php echo esc_attr( $linkRecensione_target ); ?>"><?php echo esc_html( $linkRecensione_title ); ?></a>
+            <?php endif; ?>
+        </button>
+        </div>
+
     </div>
 
 
