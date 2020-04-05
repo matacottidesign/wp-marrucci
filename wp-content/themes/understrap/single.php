@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-
-<div class="wrapper" id="single-wrapper">
+<div class="hero-articolo bg-warning"></div>
+<div class="wrapper " id="single-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 

@@ -344,6 +344,27 @@ nav{
 
 
 //Hero-img
+.hero-progetti{
+	height: 400px;
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-progetti.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.hero-esposizioni{
+	height: 400px;
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-esposizioni.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.hero-commissioni{
+	height: 400px;
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-commissioni.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .hero-bio{
 	height: 400px;
 	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-bio.jpg');
@@ -351,9 +372,9 @@ nav{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.hero-blog{
+.hero-articolo{
 	height: 400px;
-	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-blog.jpg');
+	background-image: url('<?php echo get_template_directory_uri(); ?>/../../img/img-articolo.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

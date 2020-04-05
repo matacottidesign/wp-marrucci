@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<div class="hero-blog bg-warning"></div>
+<div class="hero-articolo bg-warning"></div>
 
 <!--Cards-->
 <div class="py-8">
