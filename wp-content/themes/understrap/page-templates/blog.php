@@ -32,21 +32,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                         // vars
                         $image = get_sub_field('immagine_ripetitore');
+                        $title = get_sub_field('titolo_ripetitore');
+                        $description = get_sub_field('descrizione_ripetitore');
+                        $link = get_sub_field('link_ripetitore');
 
                         ?>
-                        <div class="col-12 col-md-4">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-                                        <div class="card-body">
-                                            <h6><?php the_sub_field('titolo_ripetitore'); ?></h6>
-                                            <?php the_sub_field('descrizione_ripetitore'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="flip-box-back">
-                                        <h2>Back Side</h2>
-                                    </div>
+                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="card-box">
+                                <?php 
+                                if( !empty( $image ) ): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?>
+                                <div class="content-card-box p-3">
+                                    <h5><?php echo $title; ?></h5>
+                                    <p><?php echo $description; ?></p>
+                                    <button class="btn btn-warning">
+                                        <?php 
+                                        if( $link ): 
+                                            $link_url = $link['url'];
+                                            $link_title = $link['title'];
+                                            $link_target = $link['target'] ? $link['target'] : '_self';
+                                            ?>
+                                            <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                                        <?php endif; ?>
+                                    </button>
                                 </div>
                             </div>
                         </div>

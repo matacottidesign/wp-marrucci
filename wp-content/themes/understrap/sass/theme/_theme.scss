@@ -361,36 +361,32 @@ nav{
 
 
 //Blog
-.flip-box {
-  perspective: 1000px;
+.card-box{
+	max-width: 400px;
+	overflow: hidden;
+	background-color: $primary;
+	transition: 0.5s;
+
+	img{
+		transition: 0.5s;
+	}
+
+	.content-card-box{
+		transition: 0.5s;
+	}
+}
+.card-box:hover{
+	img{
+		opacity: 0.1;
+	}
+
+	.content-card-box{
+		color: $white;
+		-ms-transform: translate(0px,-50px); /* IE 9 */
+		transform: translate(0px,-50px); /* Standard syntax */
+	}
 }
 
-.flip-box-inner {
-  position: absolute;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-box-front, .flip-box-back {
-  position: relative;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-box-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-box-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
 
 
 
