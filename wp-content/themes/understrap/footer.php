@@ -40,7 +40,8 @@ $container = get_theme_mod( 'understrap_container_type' );
       </div>
 
       <div class="col-12 col-md-4 text-center">
-      <p>Made with <i class="fab fa-wordpress"></i> and <i class="fas fa-heart"></i> by <a class="matacotti" href="https://matacottidesign.it" target="_blank">Matacotti Design</a></p>
+      <p class="pb-3">Made with <i class="fab fa-wordpress"></i> and <i class="fas fa-heart"></i> by <a class="matacotti" href="https://matacottidesign.it" target="_blank">Matacotti Design</a></p>
+      <a style="color: #ffc107;" href="https://valeriomarrucci.it/privacy-policy">Privacy Policy</a>
       </div>
 
     </div>

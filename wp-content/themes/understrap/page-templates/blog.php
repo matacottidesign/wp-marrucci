@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         $link = get_sub_field('link_ripetitore');
 
                         ?>
-                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <div class="col-12 col-md-4 d-flex justify-content-center my-3">
                             <div class="card-box">
                                 <?php 
                                 if( !empty( $image ) ): ?>

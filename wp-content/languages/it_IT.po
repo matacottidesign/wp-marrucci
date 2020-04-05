@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-01 22:31:23+0000\n"
+"PO-Revision-Date: 2020-04-04 14:41:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -375,10 +375,6 @@ msgstr "Apri le impostazioni del documento"
 msgid "Open block settings"
 msgstr "Apri le impostazioni del blocco"
 
-#: wp-includes/js/dist/edit-post.js:6370
-msgid "New to the Block Editor? Want to learn more about using it? "
-msgstr "L'editor a blocchi è una novità per te? Vuoi sapere di più su come usarlo?"
-
 #: wp-includes/js/dist/edit-post.js:6372
 msgid "Here's a detailed guide."
 msgstr "Qui hai una guida dettagliata."
@@ -387,9 +383,13 @@ msgstr "Qui hai una guida dettagliata."
 msgid "Learn how to use the Block Editor"
 msgstr "Impara a usare l'editor a blocchi"
 
+#: wp-includes/js/dist/edit-post.js:6370
+msgid "New to the Block Editor? Want to learn more about using it? "
+msgstr "L'editor a blocchi è una novità per te? Vuoi sapere di più su come usarlo? "
+
 #: wp-includes/js/dist/edit-post.js:6358
 msgid "All of the blocks available to you live in the Block Library. You’ll find it wherever you see the <InserterIconImage /> icon."
-msgstr "Tutti i blocchi che puoi usare si trovano nella libreria blocchi. La troverai ovunque vedi l'icona <InserterIconImage />."
+msgstr "Tutti i blocchi che puoi usare si trovano nella libreria dei blocchi. La troverai ovunque vedi l'icona <InserterIconImage />."
 
 #: wp-includes/js/dist/edit-post.js:6350
 msgid "Each block comes with its own set of controls for changing things like color, width, and alignment. These will show and hide automatically when you have a block selected."
@@ -397,7 +397,7 @@ msgstr "Ogni blocco viene fornito con un proprio set di controlli per cambiare c
 
 #: wp-includes/js/dist/edit-post.js:6354
 msgid "Get to know the Block Library"
-msgstr "Scopri la libreria blocchi"
+msgstr "Scopri la libreria dei blocchi"
 
 #: wp-includes/js/dist/edit-post.js:6346
 msgid "Make each block your own"
