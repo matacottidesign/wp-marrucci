@@ -1,15 +1,20 @@
 
+RewriteEngine on
+
+RewriteOptions inherit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^valeriomarrucci\.it$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.valeriomarrucci\.it$
+RewriteRule ^/?$ "https\:\/\/valeriomarrucci\.it\/" [R=301,L]
+
 # BEGIN WordPress
-# Le direttive (linee) tra `BEGIN WordPress` e `END WordPress` sono
-# generate dinamicamente, e dovrebbero essere modificare solo con i filtri di WordPress.
-# Ogni modifica alle direttive tra questi marcatori sarà sovrascritta.
-<IfModule mod_rewrite.c>
+
 RewriteEngine On
-RewriteBase /wp-marrucci/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /wp-marrucci/index.php [L]
-</IfModule>
+RewriteRule . /index.php [L]
 
 # END WordPress
